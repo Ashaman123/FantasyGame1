@@ -1,7 +1,13 @@
 import java.util.Scanner;
 
 public class CharacterCreation {
-
+	public static Mage mage;
+	public static Paladin paladin;
+	public static Ranger ranger;
+	public static Thief thief;
+	public static Bard bard;
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -45,7 +51,7 @@ public class CharacterCreation {
 						System.out.println("[Y] or [N]");
 						choice = scanner.nextLine().toUpperCase().charAt(0);
 					}
-				Mage mage = new Mage(name);
+						mage = new Mage(name);
 				System.out.println("Well then " + name + "...let me tell you a story!");
 			    GameSaverManager.saveFileName = name;
 			    	MainGame.GameStart();
@@ -64,7 +70,7 @@ public class CharacterCreation {
 						System.out.println("[Y] or [N]");
 						choice = scanner.nextLine().toUpperCase().charAt(0);
 					}
-				Paladin paladin = new Paladin(name);
+				 paladin = new Paladin(name);
 				System.out.println("Well then " + name + "...let me tell you a story!");
 			    GameSaverManager.saveFileName = name;
 		    	MainGame.GameStart();
@@ -84,7 +90,7 @@ public class CharacterCreation {
 						System.out.println("[Y] or [N]");
 						choice = scanner.nextLine().toUpperCase().charAt(0);
 					}
-					Ranger ranger = new Ranger(name);
+					 ranger = new Ranger(name);
 					System.out.println("Well then " + name + "...let me tell you a story!");
 				    GameSaverManager.saveFileName = name;
 			    	MainGame.GameStart();
@@ -104,13 +110,14 @@ public class CharacterCreation {
 						System.out.println("[Y] or [N]");
 						choice = scanner.nextLine().toUpperCase().charAt(0);
 					}
-				Thief thief = new Thief(name);
+				 thief = new Thief(name);
 				System.out.println("Well then " + name + "...let me tell you a story!");
 			    GameSaverManager.saveFileName = name;
 		    	MainGame.GameStart();
 
 			}
 			else {
+				String UserClass = "Bard";
 				String name = scanner.nextLine();
 				System.out.println("Please enter your name adventurer! ");
 				name = scanner.nextLine();
@@ -124,11 +131,11 @@ public class CharacterCreation {
 						System.out.println("[Y] or [N]");
 						choice = scanner.nextLine().toUpperCase().charAt(0);
 					}
-				Bard bard = new Bard(name);
+				 bard = new Bard(name);
 				System.out.println("Well then " + name + "...let me tell you a story!");
 			    GameSaverManager.saveFileName = name;
 		    	MainGame.GameStart();
-
+		    	
 			}
 	}
 

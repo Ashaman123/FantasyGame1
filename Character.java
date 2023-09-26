@@ -57,11 +57,40 @@ public class Character {
         inventory.remove(item);
     }
 
+    public String getName() {
+        return name;
+    }
+
     public int getLevel() {
-    	return level;
+        return level;
     }
-    public int gethp() {
-    	return hp;
+
+    public int getMaxHp() {
+        return maxHp;
     }
-    // Getters and setters for character attributes (name, level, hp, etc.)
+
+    public int getHp() {
+        return hp;
+    }
+
+    public int getAttackDamage() {
+        return attackDamage;
+    }
+
+    public int getArmor() {
+        return defense;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public int getMaxExperience() {
+        return maxExperience;
+    }
+
+    public List<String> getInventory() {
+        return inventory;
+    }
+
 }
