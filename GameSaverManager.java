@@ -2,12 +2,14 @@ import java.io.*;
 
 public class GameSaverManager {
     public static void saveGameState(GameState gameState, String fileName) {
-        // Saving logic here
+        System.out.println("This will overwrite the previous save data");
+    	// Saving logic here
     	
     }
 
     public static GameState loadGameState(String fileName) {
         // Loading logic here
-        return null; // Replace with actual loaded game state
+        System.out.println("This will load data"); //REplace with load game 
+        return null;
     }
 }
