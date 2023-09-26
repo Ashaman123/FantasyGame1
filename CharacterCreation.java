@@ -12,15 +12,15 @@ public class CharacterCreation {
 		System.out.println("***********************************");
 		System.out.println("Welcome to FantasyGame1!");
 		System.out.println("***********************************");
-		System.out.println("You are about to embaark on an amazong journey!");
+		System.out.println("You are about to begin an amazing journey!");
 		ClassSelection();
 	}
 	
 	public static void ClassSelection() {
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Please Select Your Class");
-		System.out.println("");
+		System.out.println("Please Select Your Class (1-5)");
+		System.out.println("*********************************");
 		System.out.println("1. Mage");
 		System.out.println("2. Paladin");
 		System.out.println("3. Ranger");
@@ -32,19 +32,103 @@ public class CharacterCreation {
 			CharacterChoice = scanner.nextInt();
 		}
 			if(CharacterChoice == 1) {
-				//Mage.Creator();
+				String name = scanner.nextLine();
+				System.out.println("Please enter your name adventurer! ");
+				name = scanner.nextLine();
+				System.out.println("Your name is " + name + "?");
+				System.out.println("[Y] or [N]");
+				char choice = scanner.nextLine().toUpperCase().charAt(0);
+					while(choice == ('N')) {
+						System.out.println("Oh! I must have misheard you! What is your name adventurer? ");
+						name = scanner.nextLine();
+						System.out.println("Your name is " + name + "?");
+						System.out.println("[Y] or [N]");
+						choice = scanner.nextLine().toUpperCase().charAt(0);
+					}
+				Mage mage = new Mage(name);
+				System.out.println("Well then " + name + "...let me tell you a story!");
+			    GameSaverManager.saveFileName = name;
+			    	MainGame.GameStart();
 			}
 			else if(CharacterChoice == 2) {
-				//Paladin.Creator();
+				String name = scanner.nextLine();
+				System.out.println("Please enter your name adventurer! ");
+				name = scanner.nextLine();
+				System.out.println("Your name is " + name + "?");
+				System.out.println("[Y] or [N]");
+				char choice = scanner.nextLine().toUpperCase().charAt(0);
+					while(choice == ('N')) {
+						System.out.println("Oh! I must have misheard you! What is your name adventurer? ");
+						name = scanner.nextLine();
+						System.out.println("Your name is " + name + "?");
+						System.out.println("[Y] or [N]");
+						choice = scanner.nextLine().toUpperCase().charAt(0);
+					}
+				Paladin paladin = new Paladin(name);
+				System.out.println("Well then " + name + "...let me tell you a story!");
+			    GameSaverManager.saveFileName = name;
+		    	MainGame.GameStart();
+
 			}
 			else if(CharacterChoice == 3) {
-				//Ranger.Creator();
+				String name = scanner.nextLine();
+				System.out.println("Please enter your name adventurer! ");
+				name = scanner.nextLine();
+				System.out.println("Your name is " + name + "?");
+				System.out.println("[Y] or [N]");
+				char choice = scanner.nextLine().toUpperCase().charAt(0);
+					while(choice == ('N')) {
+						System.out.println("Oh! I must have misheard you! What is your name adventurer? ");
+						name = scanner.nextLine();
+						System.out.println("Your name is " + name + "?");
+						System.out.println("[Y] or [N]");
+						choice = scanner.nextLine().toUpperCase().charAt(0);
+					}
+					Ranger ranger = new Ranger(name);
+					System.out.println("Well then " + name + "...let me tell you a story!");
+				    GameSaverManager.saveFileName = name;
+			    	MainGame.GameStart();
+
 			}
 			else if(CharacterChoice == 4) {
-				//Thief.Creator();
+				String name = scanner.nextLine();
+				System.out.println("Please enter your name adventurer! ");
+				name = scanner.nextLine();
+				System.out.println("Your name is " + name + "?");
+				System.out.println("[Y] or [N]");
+				char choice = scanner.nextLine().toUpperCase().charAt(0);
+					while(choice == ('N')) {
+						System.out.println("Oh! I must have misheard you! What is your name adventurer? ");
+						name = scanner.nextLine();
+						System.out.println("Your name is " + name + "?");
+						System.out.println("[Y] or [N]");
+						choice = scanner.nextLine().toUpperCase().charAt(0);
+					}
+				Thief thief = new Thief(name);
+				System.out.println("Well then " + name + "...let me tell you a story!");
+			    GameSaverManager.saveFileName = name;
+		    	MainGame.GameStart();
+
 			}
 			else {
-				//Bard.Creator();
+				String name = scanner.nextLine();
+				System.out.println("Please enter your name adventurer! ");
+				name = scanner.nextLine();
+				System.out.println("Your name is " + name + "?");
+				System.out.println("[Y] or [N]");
+				char choice = scanner.nextLine().toUpperCase().charAt(0);
+					while(choice == ('N')) {
+						System.out.println("Oh! I must have misheard you! What is your name adventurer? ");
+						name = scanner.nextLine();
+						System.out.println("Your name is " + name + "?");
+						System.out.println("[Y] or [N]");
+						choice = scanner.nextLine().toUpperCase().charAt(0);
+					}
+				Bard bard = new Bard(name);
+				System.out.println("Well then " + name + "...let me tell you a story!");
+			    GameSaverManager.saveFileName = name;
+		    	MainGame.GameStart();
+
 			}
 	}
 

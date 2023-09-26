@@ -7,7 +7,7 @@ public class StartingScreen {
 		// TODO Auto-generated method stub
 		Scanner scanner = new Scanner(System.in);
 		
-		
+	while(true) {
 		System.out.println("--------------------------------------------");
 		System.out.println("	  WELCOME TO FANTASYGAME1");
 		System.out.println("--------------------------------------------");
@@ -21,7 +21,12 @@ public class StartingScreen {
 					NewGame();
 				}
 				else if(choice == 2) {
+					if(GameSaverManager.doesSaveFileExist() == false) {
+						System.out.println("No save currently exists. Time to start a new adventure!");
+					}
+					else {
 					LoadMenu();
+					}
 				}
 				if(choice == 3) {
 					QuitGame();
@@ -33,14 +38,14 @@ public class StartingScreen {
 					}
 				}
 }
+	}
 						public static void NewGame() {
 							System.out.println("Start New Game");
 							CharacterCreation.WelcomeScreen();   
-						
 						}
 						public static void LoadMenu() {
 					        System.out.println("Load Existing Game");
-					        //GameSaverManager.loadGameState();
+					        GameSaverManager.loadGameState();
 					    }
 						public static void QuitGame() {
 					        System.out.println("Have a good day!");
@@ -51,3 +56,4 @@ public class StartingScreen {
 	
 	
 }
+	
