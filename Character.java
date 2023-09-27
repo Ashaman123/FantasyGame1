@@ -10,9 +10,9 @@ public class Character {
     private double armor;
     private double experience;
     private double maxExperience;
-    private List<String> inventory;
+    private List<InventoryItem> inventory;
     private double accuracy;
-    
+
     
     public Character(String name) {
         this.name = name;
@@ -24,11 +24,29 @@ public class Character {
         this.experience = 0.00;
         this.maxExperience = 100.00;
         this.accuracy = 100.00;
-        
-        
-        this.inventory = new ArrayList<>();
+        inventory = new ArrayList<>();
     }
 
+   
+// Method to add an item to the inventory
+	public void addItemToInventory(String itemName, int itemAmount) {
+	    InventoryItem newItem = new InventoryItem(itemName, itemAmount);
+	    inventory.add(newItem);
+	}
+
+	// Method to remove an item from the inventory
+	public void removeItemFromInventory(String itemName, int itemAmount) {
+	    inventory.remove(itemAmount);
+		
+		// Implement logic to remove the specified item
+	    // You can use a loop to search for and remove the item
+	}
+	
+	// Method to retrieve the inventory
+	public List<InventoryItem> getInventory() {
+	    return inventory;
+	}
+    
     public void levelUp() {
         if (experience >= maxExperience) {
             level++;
@@ -41,8 +59,11 @@ public class Character {
         }
     }
 
-    public void heal() {
+    public void potionHeal() {
         // Implement healing logic here
+    	hp = this.hp + 50;
+    	System.out.println("You used a potion and healed 50 HP!");
+    	
     }
 
     public void attack(Character enemy) {
@@ -52,10 +73,6 @@ public class Character {
     public void addExperience(int amount) {
         experience += amount;
         levelUp();
-    }
-
-    public void addItem(String item) {
-        inventory.add(item);
     }
 
     public void removeItem(String item) {
@@ -96,8 +113,6 @@ public class Character {
     public double getAccuracy() {
         return accuracy;
     }
-    public List<String> getInventory() {
-        return inventory;
-    }
+    
 
 }

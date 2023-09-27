@@ -2,6 +2,10 @@ import java.util.Scanner;
 import java.util.List;
 
 public class MainGame {
+	
+	private static Character character;
+	
+	
     public static void main(String[] args) {
     	GameStart();
     }
@@ -15,7 +19,7 @@ public class MainGame {
 		double userArmor = 0;
 		double userExperience = 0;
 		double userMaxExperience = 0;
-		List<String> userInventory;
+		List<InventoryItem> userInventory;
 		
         if(CharacterCreation.mage != null) {
     		Mage mage = CharacterCreation.mage;
@@ -27,6 +31,7 @@ public class MainGame {
     		 userExperience = mage.getExperience();
     		 userMaxExperience = mage.getMaxExperience();
     		 userInventory = mage.getInventory();
+    		 character = mage;
     	}
     	else if(CharacterCreation.paladin != null) {
     		Paladin paladin = CharacterCreation.paladin;
@@ -38,6 +43,7 @@ public class MainGame {
     		 userExperience = paladin.getExperience();
     		 userMaxExperience = paladin.getMaxExperience();
     		 userInventory = paladin.getInventory(); 
+    		character = paladin;
     		
     	} else if (CharacterCreation.paladin != null){
     		Ranger ranger = CharacterCreation.ranger;
@@ -49,7 +55,8 @@ public class MainGame {
 	         userExperience = ranger.getExperience();
 	         userMaxExperience = ranger.getMaxExperience();
 	         userInventory = ranger.getInventory(); 
-	        
+	         character = ranger; 
+	         
     	} else if (CharacterCreation.thief != null){
     		Thief thief = CharacterCreation.thief;
 	         userHp = thief.getHp();
@@ -60,7 +67,7 @@ public class MainGame {
 	         userExperience = thief.getExperience();
 	         userMaxExperience = thief.getMaxExperience();
 	         userInventory = thief.getInventory();
-	        
+	         character = thief; 
     	} else {
     		Bard bard = CharacterCreation.bard;
 	         userHp = bard.getHp();
@@ -71,6 +78,8 @@ public class MainGame {
 	         userExperience = bard.getExperience();
 	         userMaxExperience = bard.getMaxExperience();
 	         userInventory = bard.getInventory();
+	         character = bard;
+	         
     	}
       
         System.out.println("Level: " + userLevel);
@@ -101,6 +110,8 @@ public class MainGame {
     
     }
         public static void levelGenerator() {
+        	
+        	
         	
         		
         		
