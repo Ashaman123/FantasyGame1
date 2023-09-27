@@ -8,13 +8,13 @@ public class MainGame {
     
     public static void GameStart() {
         Scanner scanner = new Scanner(System.in);
-        int userHp = 0;
-        int userLevel = 0;
-		int userMaxHp = 0;
-		int userAttackDamage = 0;
-		int userArmor = 0;
-		int userExperience = 0;
-		int userMaxExperience = 0;
+        double userHp = 0;
+        double userLevel = 0;
+		double userMaxHp = 0;
+		double userAttackDamage = 0;
+		double userArmor = 0;
+		double userExperience = 0;
+		double userMaxExperience = 0;
 		List<String> userInventory;
 		
         if(CharacterCreation.mage != null) {

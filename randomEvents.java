@@ -19,8 +19,8 @@ public class randomEvents {
         Enemy randomEnemy = createEnemy(enemyTypes[randomIndex], enemyName);
 
         // Display the selected enemy subclass
-        System.out.println("A wild " + randomEnemy.name + " appears!");
-        randomEnemy.attack();
+        //System.out.println("A wild " + randomEnemy.name + " appears!");
+        //randomEnemy.attack();
     }
 
     // Create an instance of an enemy subclass

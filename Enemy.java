@@ -32,7 +32,9 @@ public class Enemy {
 
 
 	public void enemyDefeated() {
-		Character.addExperince(this.experienceGiven);
+		int killCount = 0; killCount++;
+		int amount = this.experienceGiven;
+		//Character.addExperience(amount);
 	}
 	
 }

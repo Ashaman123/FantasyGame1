@@ -4,23 +4,28 @@ import java.util.ArrayList;
 public class Character {
     private String name;
     private int level;
-    private int maxHp;
-    private int hp;
-    private int attackDamage;
-    private int defense;
-    private int experience;
-    private int maxExperience;
+    private double maxHp;
+    private double hp;
+    private double attackDamage;
+    private double armor;
+    private double experience;
+    private double maxExperience;
     private List<String> inventory;
-
+    private double accuracy;
+    
+    
     public Character(String name) {
         this.name = name;
         this.level = 1;
-        this.maxHp = 100;
-        this.hp = 100;
-        this.attackDamage = 10;
-        this.defense = 10;
-        this.experience = 0;
-        this.maxExperience = 100;
+        this.maxHp = 100.00;
+        this.hp = 100.00;
+        this.attackDamage = 10.00;
+        this.armor = 10.00;
+        this.experience = 0.00;
+        this.maxExperience = 100.00;
+        this.accuracy = 100.00;
+        
+        
         this.inventory = new ArrayList<>();
     }
 
@@ -28,10 +33,10 @@ public class Character {
         if (experience >= maxExperience) {
             level++;
             maxExperience *= 1.5;
-            maxHp += 10;
+            maxHp += 10.0;
             hp = maxHp;
-            attackDamage += 5;
-            defense += 5;
+            attackDamage += 5.0;
+            armor += 5.0;
             System.out.println(name + " has leveled up to level " + level + "!");
         }
     }
@@ -65,30 +70,32 @@ public class Character {
         return level;
     }
 
-    public int getMaxHp() {
+    public double getMaxHp() {
         return maxHp;
     }
 
-    public int getHp() {
+    public double getHp() {
         return hp;
     }
 
-    public int getAttackDamage() {
+    public double getAttackDamage() {
         return attackDamage;
     }
 
-    public int getArmor() {
-        return defense;
+    public double getArmor() {
+        return armor;
     }
 
-    public int getExperience() {
+    public double getExperience() {
         return experience;
     }
 
-    public int getMaxExperience() {
+    public double getMaxExperience() {
         return maxExperience;
     }
-
+    public double getAccuracy() {
+        return accuracy;
+    }
     public List<String> getInventory() {
         return inventory;
     }
