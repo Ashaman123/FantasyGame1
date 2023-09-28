@@ -1,0 +1,5 @@
+character types inherit Character class
+enemy types inherit Enemy class
+
+GameEngine uses the LevelGenerator class to randomize new levels which will run to either a completion point or 
+to an infinite amount. 

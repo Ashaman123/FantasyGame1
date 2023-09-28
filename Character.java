@@ -1,118 +1,166 @@
 import java.util.List;
+import java.util.Scanner;
 import java.util.ArrayList;
 
+
 public class Character {
-    private String name;
-    private int level;
-    private double maxHp;
-    private double hp;
-    private double attackDamage;
-    private double armor;
-    private double experience;
-    private double maxExperience;
-    private List<InventoryItem> inventory;
-    private double accuracy;
+	private String name;
+	private double hp;
+	private double maxHp;
+	private double experience;
+	private double maxExperience;
+	private double armor;
+	private int level;
+	private List<InventoryItem> inventory;
+	//private List<Skill> skills;
 
-    
-    public Character(String name) {
-        this.name = name;
-        this.level = 1;
-        this.maxHp = 100.00;
-        this.hp = 100.00;
-        this.attackDamage = 10.00;
-        this.armor = 10.00;
-        this.experience = 0.00;
-        this.maxExperience = 100.00;
-        this.accuracy = 100.00;
-        inventory = new ArrayList<>();
-    }
+	
+	
+	
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 
-   
-// Method to add an item to the inventory
-	public void addItemToInventory(String itemName, int itemAmount) {
-	    InventoryItem newItem = new InventoryItem(itemName, itemAmount);
-	    inventory.add(newItem);
 	}
 
-	// Method to remove an item from the inventory
-	public void removeItemFromInventory(String itemName, int itemAmount) {
-	    inventory.remove(itemAmount);
-		
-		// Implement logic to remove the specified item
-	    // You can use a loop to search for and remove the item
+
+
+
+
+	public String getName() {
+		return name;
+	}
+
+
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+
+
+	public double getHp() {
+		return hp;
+	}
+
+
+
+
+
+	public void setHp(double hp) {
+		this.hp = hp;
+	}
+
+
+
+
+
+	public double getMaxHp() {
+		return maxHp;
+	}
+
+
+
+
+
+	public void setMaxHp(double maxHp) {
+		this.maxHp = maxHp;
+	}
+
+
+
+
+
+	public double getExperience() {
+		return experience;
+	}
+
+
+
+
+
+	public void setExperience(double experience) {
+		this.experience = experience;
+	}
+
+
+
+
+
+	public double getMaxExperience() {
+		return maxExperience;
+	}
+
+
+
+
+
+	public void setMaxExperience(double maxExperience) {
+		this.maxExperience = maxExperience;
+	}
+
+
+
+
+
+	public double getArmor() {
+		return armor;
+	}
+
+
+
+
+
+	public void setArmor(double armor) {
+		this.armor = armor;
+	}
+
+
+
+
+
+	public int getLevel() {
+		return level;
+	}
+
+
+
+
+
+	public void setLevel(int level) {
+		this.level = level;
 	}
 	
-	// Method to retrieve the inventory
-	public List<InventoryItem> getInventory() {
-	    return inventory;
+	public void levelUp(int level) {
+		if(this.experience >= this.maxExperience) {
+		Randomizer randomizer = new Randomizer();
+		this.level = level++;
+		setExperience(0.0);
+		this.maxExperience = maxExperience * 2.0;
+		this.hp = hp * randomizer.getRandomDouble(3.0);
+		}
 	}
-    
-    public void levelUp() {
-        if (experience >= maxExperience) {
-            level++;
-            maxExperience *= 1.5;
-            maxHp += 10.0;
-            hp = maxHp;
-            attackDamage += 5.0;
-            armor += 5.0;
-            System.out.println(name + " has leveled up to level " + level + "!");
-        }
-    }
 
-    public void potionHeal() {
-        // Implement healing logic here
-    	hp = this.hp + 50;
-    	System.out.println("You used a potion and healed 50 HP!");
-    	
-    }
 
-    public void attack(Character enemy) {
-        // Implement attack logic here
-    }
 
-    public void addExperience(int amount) {
-        experience += amount;
-        levelUp();
-    }
+/*
+	public List<Skill> getSkills() {
+		return skills;
+	}
 
-    public void removeItem(String item) {
-        inventory.remove(item);
-    }
 
-    public String getName() {
-        return name;
-    }
 
-    public int getLevel() {
-        return level;
-    }
 
-    public double getMaxHp() {
-        return maxHp;
-    }
 
-    public double getHp() {
-        return hp;
-    }
-
-    public double getAttackDamage() {
-        return attackDamage;
-    }
-
-    public double getArmor() {
-        return armor;
-    }
-
-    public double getExperience() {
-        return experience;
-    }
-
-    public double getMaxExperience() {
-        return maxExperience;
-    }
-    public double getAccuracy() {
-        return accuracy;
-    }
-    
-
+	public void setSkills(List<Skill> skills) {
+		this.skills = skills;
+	}
+*/
 }
