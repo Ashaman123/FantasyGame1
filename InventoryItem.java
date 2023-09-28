@@ -5,6 +5,13 @@ public class InventoryItem {
     private String itemName;
     private int quantity;
     private String description;
+   
+    // Constructor, getters, setters, and other methods
+
+    @Override
+    public String toString() {
+        return "Item: " + itemName + ", Quantity: " + quantity;
+    }
 
     public InventoryItem(String itemName, int quantity, String description) {
         this.itemName = itemName;

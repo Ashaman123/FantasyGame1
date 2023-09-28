@@ -14,7 +14,8 @@ public class Character {
 	private List<InventoryItem> inventory;
 	private int amount;
 	private double minHp;
-	
+	private int attackCount;
+	private int hitCount;
 	
 	
 	
@@ -25,20 +26,26 @@ public class Character {
 		// TODO Auto-generated method stub
 
 	}
-
-
+	
+	
+	
 public void newCharacter() {
 	 Scanner input = new Scanner(System.in);
 	 System.out.println("Please Enter Your Character Name: ");
 	 setName(input.nextLine());
- 	 setHp(100.0);
-     setMaxHp(200.0);
- 	 setExperience(0.0);
+	 setMaxHp(200.0);
+ 	 setHp(getMaxHp());
  	 setMaxExperience(200.0);
+ 	 setExperience(0.0);
  	 setArmor(15);;
  	 setLevel(0);
  	 setAmount(0);
  	 setMinHp(0.0);
+ 	 setAttackCount(0);
+ 	 setHitCount(0);
+ 	 
+ 	 inventory = InventoryItem.createBaseInventory();
+ 	 
 }
 
 
@@ -46,9 +53,21 @@ public void newCharacter() {
 		return name;
 	}
 
+	public void setHitCount(int hitCount) {
+		this.hitCount += hitCount;
+	}
+	
+	public void setAttackCount(int attackCount) {
+		this.attackCount += attackCount;
+	}
 
+	public int getHitCount() {
+		return hitCount;
+	}
 
-
+	public int getAttackCount() {
+		return attackCount;
+	}
 
 	public void setName(String name) {
 		
@@ -101,6 +120,39 @@ public void newCharacter() {
 	}
 
 
+	
+	    // ... Other fields and methods ...
+
+	    public void attackEnemy(Enemy enemy) {
+	        double damageDealt = getAttackDamage();
+	        System.out.println(getName() + " attacks " + enemy.getName() + " for " + damageDealt + " damage.");
+	        enemy.takeDamage(damageDealt);
+	    }
+
+	    private double getAttackDamage() {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+
+		public void takeDamage1(double damage) {
+	        if (damage > 0) {
+	            hp -= damage;
+	            if (hp < 0) {
+	                hp = 0;
+	            }
+	            System.out.println(getName() + " takes " + damage + " damage.");
+	            if (isDefeated()) {
+	                System.out.println(getName() + " has been defeated!");
+	                // You can add more logic for what happens when the character is defeated
+	            }
+	        }
+	    }
+
+	    public boolean isDefeated() {
+	        return hp <= 0;
+	    }
+	
 
 
 	
@@ -200,7 +252,7 @@ public void useItem(InventoryItem item) {
 	
 }
 
-public void attack(Character target) {
+public void attack(Enemy enemy) {
 	
 }
 
@@ -214,8 +266,9 @@ public void displayCharacterInfo() {
 	    System.out.println("HP: " + hp + "/" + maxHp);
 	    System.out.println("Experience: " + experience + "/" + maxExperience);
 	    System.out.println("Armor: " + armor);
-	    System.out.println("Inventory: " + inventory);
-	    
+	    for (InventoryItem item : inventory) {
+	        System.out.println(item); 
+	    }
 	}
 
 }
