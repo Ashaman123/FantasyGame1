@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
-
+import java.util.Scanner;
 
 public class Character {
 	private String name;
@@ -13,8 +13,7 @@ public class Character {
 	private int level;
 	private List<InventoryItem> inventory;
 	private int amount;
-	//private List<Skill> skills;
-
+	private double minHp;
 	
 	
 	
@@ -28,7 +27,19 @@ public class Character {
 	}
 
 
-
+public void newCharacter() {
+	 Scanner input = new Scanner(System.in);
+	 System.out.println("Please Enter Your Character Name: ");
+	 setName(input.nextLine());
+ 	 setHp(100.0);
+     setMaxHp(200.0);
+ 	 setExperience(0.0);
+ 	 setMaxExperience(200.0);
+ 	 setArmor(15);;
+ 	 setLevel(0);
+ 	 setAmount(0);
+ 	 setMinHp(0.0);
+}
 
 
 	public String getName() {
@@ -40,6 +51,7 @@ public class Character {
 
 
 	public void setName(String name) {
+		
 		this.name = name;
 	}
 
@@ -52,7 +64,7 @@ public class Character {
 	}
 
 
-
+	
 
 
 	public void setHp(double hp) {
@@ -75,8 +87,13 @@ public class Character {
 		this.maxHp = maxHp;
 	}
 
+	public double getMinHp() {
+		return minHp;
+	}
 
-
+	public void setMinHp(Double minHp) {
+		this.minHp = minHp;
+	}
 
 
 	public double getExperience() {
@@ -163,7 +180,45 @@ public class Character {
 	    }
 	}
 
+public void takeDamage(double damage) {
+	
+}
 
+public void heal(double amount) {
+	
+}
+
+public void addToInventory(InventoryItem item) {
+	
+}
+
+public void removeFromInventory(InventoryItem item) {
+	
+}
+
+public void useItem(InventoryItem item) {
+	
+}
+
+public void attack(Character target) {
+	
+}
+
+public void isAlive() {
+	
+}
+
+public void displayCharacterInfo() {
+	    System.out.println("Name: " + name);
+	    System.out.println("Level: " + level);
+	    System.out.println("HP: " + hp + "/" + maxHp);
+	    System.out.println("Experience: " + experience + "/" + maxExperience);
+	    System.out.println("Armor: " + armor);
+	    System.out.println("Inventory: " + inventory);
+	    
+	}
+
+}
 
 
 
@@ -180,4 +235,4 @@ public class Character {
 		this.skills = skills;
 	}
 */
-}
+
