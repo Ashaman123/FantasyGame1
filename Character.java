@@ -96,7 +96,7 @@ public class Character {
 	        return maxExperience;
 	    }
 
-	    public void addExperience(double experience) {
+	    public void addExperience(double amount) {
 	        // Assuming you want to increment experience by the specified amount
 	        this.experience += experience;
 	    }
@@ -106,12 +106,16 @@ public class Character {
 	    }
 
 	    public void setAmount(double amount) {
-	        this.amount = (int) amount + 50;
+	        this.amount = (int) amount;
 	    }
 
+
 	    public double getAmount() {
+	        Randomizer randomizer = new Randomizer();
+	        amount = (int) randomizer.getRandomDouble(10.0, 51.0);
 	        return amount;
 	    }
+
 	
 
 
@@ -146,9 +150,16 @@ public class Character {
 	        Randomizer randomizer = new Randomizer();
 	        this.level += 1; // Use += to increment the level
 	        setExperience(0.0);
-	        this.maxExperience = this.maxExperience * 2.0;
+	        maxExperience = this.maxExperience * 1.33;
 	        //this.hp = hp + Math.round((randomizer.getRandomDouble(1.5) * 1.5) * 100.0) / 100.0;
-	        hp = this.hp * 2;
+	        maxHp = this.maxHp * 2; hp = maxHp;
+	        System.out.println("");
+	        System.out.println("Lvl: " + level);
+	        System.out.println("EXP: " + experience + "/" + maxExperience);
+	        System.out.println("HP: " + hp + "/" + maxHp);
+	        System.out.println("");
+
+
 	    }
 	}
 

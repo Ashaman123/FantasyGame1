@@ -12,7 +12,7 @@ public class Randomizer {
 			return this.intRandom;
 	}
 	
-	public double getRandomDouble(double bound) {
+	public double getRandomDouble(double bound, double d) {
 		this.doubleRandom = random.nextDouble();
 			return this.doubleRandom;
 	}
