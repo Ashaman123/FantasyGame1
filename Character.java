@@ -12,6 +12,7 @@ public class Character {
 	private double armor;
 	private int level;
 	private List<InventoryItem> inventory;
+	private int amount;
 	//private List<Skill> skills;
 
 	
@@ -85,36 +86,38 @@ public class Character {
 
 
 
+	
 
-	public void setExperience(double experience) {
-		this.experience = experience;
-	}
+	    public void setExperience(double experience) {
+	        this.experience = experience;
+	    }
 
+	    public double getMaxExperience() {
+	        return maxExperience;
+	    }
 
+	    public void addExperience(double experience) {
+	        // Assuming you want to increment experience by the specified amount
+	        this.experience += experience;
+	    }
 
+	    public void setMaxExperience(double maxExperience) {
+	        this.maxExperience = maxExperience;
+	    }
 
+	    public void setAmount(double amount) {
+	        this.amount = (int) amount + 50;
+	    }
 
-	public double getMaxExperience() {
-		return maxExperience;
-	}
-
-
-
-
-
-	public void setMaxExperience(double maxExperience) {
-		this.maxExperience = maxExperience;
-	}
-
-
-
+	    public double getAmount() {
+	        return amount;
+	    }
+	
 
 
 	public double getArmor() {
 		return armor;
 	}
-
-
 
 
 
@@ -138,15 +141,18 @@ public class Character {
 		this.level = level;
 	}
 	
-	public void levelUp(int level) {
-		if(this.experience >= this.maxExperience) {
-		Randomizer randomizer = new Randomizer();
-		this.level = level++;
-		setExperience(0.0);
-		this.maxExperience = maxExperience * 2.0;
-		this.hp = hp * randomizer.getRandomDouble(3.0);
-		}
+	public void levelUp() {
+	    if (this.experience >= this.maxExperience) {
+	        Randomizer randomizer = new Randomizer();
+	        this.level += 1; // Use += to increment the level
+	        setExperience(0.0);
+	        this.maxExperience = this.maxExperience * 2.0;
+	        //this.hp = hp + Math.round((randomizer.getRandomDouble(1.5) * 1.5) * 100.0) / 100.0;
+	        hp = this.hp * 2;
+	    }
 	}
+
+
 
 
 
