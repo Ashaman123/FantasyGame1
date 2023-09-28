@@ -20,7 +20,7 @@ public class GameEngine {
     			System.out.println("This is your next oponent");
     		}
     		else {
-    				if(enemy.getAttackCount() < character.getAttackCount()) {
+    			if(enemy.getAttackCount() < character.getAttackCount()) {
     					enemy.attack(character);
     					System.out.println(enemy.getName() + " attacks " + character.getName());
     					character.takeDamage1(10.0);

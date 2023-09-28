@@ -2,6 +2,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Character {
 	private String name;
@@ -127,11 +128,13 @@ public void newCharacter() {
 	        double damageDealt = getAttackDamage();
 	        System.out.println(getName() + " attacks " + enemy.getName() + " for " + damageDealt + " damage.");
 	        enemy.takeDamage(damageDealt);
+	        attackCount += 1;
 	    }
 
 	    private double getAttackDamage() {
 			// TODO Auto-generated method stub
-			return 0;
+			Random random = new Random();
+	    	return random.nextInt(300);
 		}
 
 
@@ -142,6 +145,7 @@ public void newCharacter() {
 	                hp = 0;
 	            }
 	            System.out.println(getName() + " takes " + damage + " damage.");
+	            hitCount += 1;
 	            if (isDefeated()) {
 	                System.out.println(getName() + " has been defeated!");
 	                // You can add more logic for what happens when the character is defeated
